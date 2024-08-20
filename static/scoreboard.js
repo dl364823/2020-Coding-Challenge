@@ -1,4 +1,7 @@
 function display_scoreboard(scoreboard){
+  scoreboard.sort(function(a, b){
+    return b.score - a.score;
+  });
   $("#teams").empty();
   $.each(scoreboard, function(index, team){
     addTeamView(team.id, team.name, team.score);
